@@ -1,0 +1,30 @@
+query{
+  getBooks {
+    id
+    title
+    pages
+    author {
+      name
+    }
+  }
+}
+
+query GetBookById($bookId: Int!) {
+    getBookById(id: $bookId) {
+        id
+        title
+        author {
+            name
+            country
+        }
+        pages
+        year
+    }
+}
+
+mutation{
+  addBook(id: 2324,title:"Bien fuimos", author:{name:"Luchito",country:"Colombia"}, pages:324,year:2024){
+    id
+    title
+  }
+}
